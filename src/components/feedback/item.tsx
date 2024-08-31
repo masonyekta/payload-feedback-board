@@ -27,9 +27,11 @@ const Item = ({ post }: ItemProps) => {
 					</CardContent>
 				</Card>
 			</SheetTrigger>
-			<SheetContent side="left" className="p-10 w-full sm:max-w-[600px]">
-				<SheetHeader>
-					<SheetTitle>{post.title}</SheetTitle>
+			<SheetContent side="left" className="px-4 pt-10 sm:p-10 w-full sm:max-w-3xl">
+				<SheetHeader className="pt-5">
+					<SheetTitle className="text-xl font-bold leading-none tracking-tight sm:text-2xl">
+						{post.title}
+					</SheetTitle>
 					<SheetDescription>{post.description}</SheetDescription>
 				</SheetHeader>
 			</SheetContent>

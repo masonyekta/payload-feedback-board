@@ -38,8 +38,8 @@ const formSchema = z.object({
 		.min(1, {
 			message: 'Feedback is required',
 		})
-		.max(200, {
-			message: 'Feedback should be less than 200 characters',
+		.max(500, {
+			message: 'Feedback should be less than 500 characters',
 		}),
 	captcha: z.string().min(1, {
 		message: 'Captcha is required',
