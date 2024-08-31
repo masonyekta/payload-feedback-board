@@ -59,6 +59,11 @@ export default buildConfig({
 				create: () => true,
 			},
 			hooks: {
+				afterChange: [
+					async () => {
+						revalidatePath('/')
+					},
+				],
 				afterDelete: [
 					async () => {
 						revalidatePath('/')
