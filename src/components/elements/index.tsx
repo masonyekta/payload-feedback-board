@@ -1,0 +1,7 @@
+export { default as Image } from './image'
+export { default as Link } from './link'
+export { default as SectionTitle } from './section-title'
+export { default as Heading } from './heading'
+export { default as SubIntro } from './intro'
+export { default as Paragraph } from './paragraph'
+export { default as PageNav } from './page-nav'
