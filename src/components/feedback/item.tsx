@@ -31,7 +31,7 @@ const Item = ({ post }: ItemProps) => {
 			<SheetContent side="left" className="p-0 flex flex-col w-full sm:max-w-3xl">
 				<div className="overflow-auto px-4 pt-10 sm:p-10">
 					<SheetHeader className="pt-5">
-						<SheetTitle className="text-xl font-bold leading-normal tracking-tight sm:text-2xl">
+						<SheetTitle className="text-2xl font-bold leading-normal tracking-tight">
 							{post.title}
 						</SheetTitle>
 						<SheetDescription>{post.description}</SheetDescription>
