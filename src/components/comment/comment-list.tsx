@@ -24,7 +24,7 @@ export default async function CommentList({ id }: CommentListProps) {
 	})
 
 	return (
-		<div>
+		<div className="pb-20">
 			<div className="pb-3 mt-10 mb-10 border-b border-neutral-800 dark:border-neutral-600 d-block w-full">
 				<h3 className="text-xl font-bold leading-none tracking-tight">All Comments</h3>
 			</div>
