@@ -57,3 +57,32 @@ export async function validateCaptcha(captchaToken: string): Promise<boolean> {
 		return false
 	}
 }
+
+export async function addComment(formData: any, postID: string) {
+	const isCaptchaValid = await validateCaptcha(formData.captcha)
+
+	// Check if the captcha is valid
+	if (!isCaptchaValid) {
+		return { error: true, message: `Captcha value failed. Try to reload the page.` }
+	}
+
+	// Add the comment
+	try {
+		const payload = await getPayloadHMR({
+			config: configPromise,
+		})
+
+		await payload.create({
+			collection: 'comments',
+			data: {
+				name: formData.name,
+				comment: formData.comment,
+				post: postID,
+			},
+		})
+		revalidatePath('/')
+		return { error: false, message: `Your comment has been successfully added.` }
+	} catch (e) {
+		return { error: true, message: `Failed to add your comment. Please try again. ${e}` }
+	}
+}

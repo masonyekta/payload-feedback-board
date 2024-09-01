@@ -90,6 +90,47 @@ export default buildConfig({
 				},
 			],
 		},
+		{
+			slug: 'comments',
+			admin: {
+				useAsTitle: 'name',
+			},
+			access: {
+				read: () => true,
+				create: () => true,
+			},
+			hooks: {
+				afterChange: [
+					async () => {
+						revalidatePath('/')
+					},
+				],
+				afterDelete: [
+					async () => {
+						revalidatePath('/')
+					},
+				],
+			},
+			fields: [
+				{
+					name: 'name',
+					type: 'text',
+					index: true,
+				},
+				{
+					name: 'comment',
+					type: 'textarea',
+				},
+				{
+					name: 'post',
+					type: 'relationship',
+					relationTo: 'posts',
+					hasMany: false,
+					index: true,
+					required: true,
+				},
+			],
+		},
 	],
 	secret: process.env.PAYLOAD_SECRET || '',
 	typescript: {

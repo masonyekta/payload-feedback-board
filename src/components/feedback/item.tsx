@@ -1,5 +1,6 @@
 import { Post as PostType } from '@payload-types'
 
+import { Comments } from '@/components/comment'
 import { Card, CardContent } from '@/components/ui/card'
 import {
 	Sheet,
@@ -27,13 +28,16 @@ const Item = ({ post }: ItemProps) => {
 					</CardContent>
 				</Card>
 			</SheetTrigger>
-			<SheetContent side="left" className="px-4 pt-10 sm:p-10 w-full sm:max-w-3xl">
-				<SheetHeader className="pt-5">
-					<SheetTitle className="text-xl font-bold leading-none tracking-tight sm:text-2xl">
-						{post.title}
-					</SheetTitle>
-					<SheetDescription>{post.description}</SheetDescription>
-				</SheetHeader>
+			<SheetContent side="left" className="p-0 flex flex-col w-full sm:max-w-3xl">
+				<div className="overflow-auto px-4 pt-10 sm:p-10">
+					<SheetHeader className="pt-5">
+						<SheetTitle className="text-xl font-bold leading-normal tracking-tight sm:text-2xl">
+							{post.title}
+						</SheetTitle>
+						<SheetDescription>{post.description}</SheetDescription>
+					</SheetHeader>
+					<Comments id={post.id} />
+				</div>
 			</SheetContent>
 		</Sheet>
 	)

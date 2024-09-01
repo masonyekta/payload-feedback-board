@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     categories: Category;
     posts: Post;
+    comments: Comment;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -82,6 +83,18 @@ export interface Post {
   title?: string | null;
   description?: string | null;
   category: string | Category;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "comments".
+ */
+export interface Comment {
+  id: string;
+  name?: string | null;
+  comment?: string | null;
+  post: string | Post;
   updatedAt: string;
   createdAt: string;
 }
