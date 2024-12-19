@@ -34,7 +34,6 @@
 		"@radix-ui/react-select": "^2.1.4",
 		"@radix-ui/react-slot": "^1.1.1",
 		"@radix-ui/react-toast": "^1.2.4",
-		"babel-plugin-react-compiler": "19.0.0-beta-201e55d-20241215",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cross-env": "^7.0.3",
@@ -56,8 +55,8 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"@trivago/prettier-plugin-sort-imports": "^5.2.0",
 		"@types/node": "^22.10.2",
-		"@types/react": "npm:types-react@19.0.0-alpha.3",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-alpha.3",
+		"@types/react": "19.0.1",
+		"@types/react-dom": "19.0.1",
 		"@typescript-eslint/eslint-plugin": "^8.18.1",
 		"@typescript-eslint/parser": "^8.18.1",
 		"autoprefixer": "^10.4.20",
@@ -77,15 +76,5 @@
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"tailwindcss": "^3.4.17",
 		"typescript": "^5.7.2"
-	},
-	"pnpm": {
-		"overrides": {
-			"@types/react": "npm:types-react@19.0.0-alpha.3",
-			"@types/react-dom": "npm:types-react-dom@19.0.0-alpha.3"
-		}
-	},
-	"overrides": {
-		"@types/react": "npm:types-react@19.0.0-alpha.3",
-		"@types/react-dom": "npm:types-react-dom@19.0.0-alpha.3"
 	}
 }
