@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 
 import { Comment } from '@/components/comment'
 
@@ -8,7 +8,7 @@ interface CommentListProps {
 }
 
 export default async function CommentList({ id }: CommentListProps) {
-	const payload = await getPayloadHMR({
+	const payload = await getPayload({
 		config: configPromise,
 	})
 

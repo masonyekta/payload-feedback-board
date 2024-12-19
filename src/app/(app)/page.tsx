@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 import React from 'react'
 
 import { Heading, Paragraph } from '@/components/elements'
@@ -7,7 +7,7 @@ import { Categories, SubmitBanner } from '@/components/feedback'
 import { Container } from '@/components/layout'
 
 export default async function Page() {
-	const payload = await getPayloadHMR({
+	const payload = await getPayload({
 		config: configPromise,
 	})
 
