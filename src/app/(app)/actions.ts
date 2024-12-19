@@ -1,9 +1,9 @@
 'use server'
 
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { revalidatePath } from 'next/cache'
 import fetch from 'node-fetch'
+import { getPayload } from 'payload'
 
 export async function addFeedback(formData: any) {
 	const isCaptchaValid = await validateCaptcha(formData.captcha)
@@ -15,7 +15,7 @@ export async function addFeedback(formData: any) {
 
 	// Add the feedback
 	try {
-		const payload = await getPayloadHMR({
+		const payload = await getPayload({
 			config: configPromise,
 		})
 
@@ -68,7 +68,7 @@ export async function addComment(formData: any, postID: string) {
 
 	// Add the comment
 	try {
-		const payload = await getPayloadHMR({
+		const payload = await getPayload({
 			config: configPromise,
 		})
 

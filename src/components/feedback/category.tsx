@@ -1,5 +1,5 @@
 import configPromise from '@payload-config'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
+import { getPayload } from 'payload'
 
 import { Item } from '@/components/feedback'
 
@@ -10,7 +10,7 @@ interface CategoryProps {
 }
 
 export default async function Category({ id, title, color }: CategoryProps) {
-	const payload = await getPayloadHMR({
+	const payload = await getPayload({
 		config: configPromise,
 	})
 
